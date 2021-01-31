@@ -22,13 +22,13 @@
                 </form>
                 <button class="btn-cart" type="button" @click="showCart=!showCart">Корзина</button>
                 <div class="cart-block" v-show="showCart">
-                    <p v-if="!cartItems.lenght">Корзина пуста</p>
+                    <p v-if="!cartItems.length">Корзина пуста</p>
                     <div class="cart-item" v-for="item of cartItems" :key="item.id_product">
                         <div class="product-bio">
                             <img :src="imgCart" alt="image">
                             <div class="product-title">{{ item.product_name }}</div>
                             <div class="product-quantity">{{item.quantity}}</div>
-                            <div class="product-single-price">$ {{item.price}} каждый</div>
+                            <div class="product-single-price">$ {{ item.price }} каждый</div>
                         </div>
                         <div class="right-block">{{item.quantity*item.price}}</div>
                         <button class="del-bnt" @click="remove(item)">&times;</button>
